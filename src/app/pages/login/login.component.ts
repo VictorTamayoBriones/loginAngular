@@ -18,6 +18,12 @@ export class LoginComponent implements OnInit {
   constructor( private auth: AuthService ) { }
 
   ngOnInit() {
+
+    if( localStorage.getItem('email') ){
+      this.usuario.email = localStorage.getItem('email');
+      this.recordarme = true;
+    }
+
   }
 
 
