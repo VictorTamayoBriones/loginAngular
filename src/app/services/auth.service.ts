@@ -21,7 +21,7 @@ export class AuthService {
   constructor( private http: HttpClient ) { }
 
   logout(){
-
+    localStorage.removeItem('token');
   }
 
   login( usuario: UsuarioModel ){
@@ -78,5 +78,9 @@ export class AuthService {
 
     return this.userToken;
 
+  }
+
+  estaAutenticado(){
+    return this.userToken.length > 2; 
   }
 }
